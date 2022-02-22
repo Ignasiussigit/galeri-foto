@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Image Gallery</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image Gallery</h1>
+        <div class="image-container">
+            <div class="image"><img src="./img/contact-img.png" alt=""></div>
+            <div class="image"><img src="./img/course-1-1.png" alt=""></div>
+            <div class="image"><img src="./img/course-1-2.png" alt=""></div>
+            <div class="image"><img src="./img/course-1-3.png" alt=""></div>
+            <div class="image"><img src="./img/course-1-4.png" alt=""></div>
+            <div class="image"><img src="./img/course-1-5.png" alt=""></div>
+        </div>
+
+        <div class="popup-img">
+            <span>&times;</span>
+            <img src="./img/contact-img.png" alt="">
+        </div>
+
+        <div class="footer">
+            <small>&copy; Ignasius 2022</small>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.image-container img').forEach(image => {
+            image.onclick = () => {
+                document.querySelector('.popup-img').style.display = 'block';
+                document.querySelector('.popup-img img').src = image.getAttribute('src');
+            }
+        });
+
+        document.querySelector('.popup-img span').onclick = () => {
+            document.querySelector('.popup-img').style.display = 'none';
+        };
+    </script>
+</body>
+
+</html>
